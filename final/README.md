@@ -1,4 +1,4 @@
-# Exploring Apple Quality:apple: : A Data-driven Journey:bar_chart:
+# Exploring Apple Quality :apple: : A Data-driven Journey:bar_chart:
 <div style="text-align:right; font-size: 22px;font-weight: bold;">
 10225501425 宋珊珊
 </div>
@@ -45,33 +45,33 @@ dtype: int64
 
 ## :three:数据探索与特征工程
 ### 1.苹果品质分布
-![图片](./Apple%20Quality%20Distribution.png)
+![图片](./img/Apple%20Quality%20Distribution.png)
 **通过饼图可以看出该数据集中好品质的苹果与坏品质的苹果数量均衡，这使得模型更容易学习并产生对各个类别的平衡预测，也使得模型的性能评估更为客观，不会受到样本不平衡导致的偏见影响。**
 
 ### 2.单变量分析 不同特征下苹果的分布
-![图片](./Distribution%20of%20Apples%20with%20Different%20Characteristics.png)
+![图片](./img/Distribution%20of%20Apples%20with%20Different%20Characteristics.png)
 可以看到在每一种特征属性下，苹果的数量都是类正态分布的
 
 ### 3.不同特征之间的相对关系
 #### :red_circle:成对特征图表
-![图片](./Pairplot.png)
+![图片](./img/Pairplot.png)
 **从此图我们可以得知：
 1）不区分苹果好坏时，苹果的各个特征之间相关性不大；
 2）对于好品质的苹果，酸度与大小有一定的正相关关系而甜度与大小有一定的负相关关系；
 3）对于坏品质的苹果，成熟度与甜度有一定的负相关关系；
 4）总的来说，不论好苹果坏苹果，不同特征之间的相关性都不大，也就是说我们无法通过苹果的单一特征来判断苹果究竟是好品质的还是坏品质的**
 #### :red_circle:特征相关性热力图
-![图片](./Feature%20Correlation%20Heatmap.png)
+![图片](./img/Feature%20Correlation%20Heatmap.png)
  :arrow_up_small:从数值方面可以印证 1）的判断
 
-![图片](./Feature%20Correlation%20Heatmap%20for%20Quality%3Dgood.png)
+![图片](./img/Feature%20Correlation%20Heatmap%20for%20Quality%3Dgood.png)
  :arrow_up_small:从数值方面可以印证 2）的判断
 
-![图片](./Feature%20Correlation%20Heatmap%20for%20Quality%3Dbad.png)
+![图片](./img/Feature%20Correlation%20Heatmap%20for%20Quality%3Dbad.png)
  :arrow_up_small:从数值方面可以印证 3）的判断
 #### :red_circle:小提琴图
 每个数值变量相对于目标变量（苹果品质）的分布
-![图片](./Violinplot.png)
+![图片](./img/Violinplot.png)
 由此也可以看出我们无法通过苹果的单一特征来判断其品质
 
 ## :four:数据建模与结果评估
@@ -211,13 +211,13 @@ weighted avg       0.90      0.90      0.90       800
 ----------------------------
 ```
 可视化上述常用分类算法在苹果好坏分类任务中 Accuracy、Precision、Recall、F1-score 的值
-![图片](./Model%20Evaluation%20Indicator%20Bar%20Chart.png)
+![图片](./img/Model%20Evaluation%20Indicator%20Bar%20Chart.png)
 roc曲线
-![图片](./ROC%20Curves%20for%20Different%20Models.png)
+![图片](./img/ROC%20Curves%20for%20Different%20Models.png)
 **综合来看，SVC分类算法在这些指标中表现较好，可以作为苹果好坏分类任务的首选模型**
 
 可视化 SVC 对于网格搜索各个参数经过交叉验证之后的准确率得到下图
-![图片](./GridSearchCV.png)
+![图片](./img/GridSearchCV.png)
 在进行参数网格搜索后，观察到在 gamma='auto' 或 gamma='scale' 和 kernel='rbf' 以及 C=10.0 的情况下取得了最大的数值，模型性能最好。
 
 ## :five:总结与展望
